@@ -3,13 +3,13 @@ import { Text, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 import Container from '../components/Container'
 import HeaderLogo from '../components/HeaderLogo'
+import ThinButton from '../components/ThinButton'
 
 const QuestionWrapper = styled.View`
   flex: 5;
   justify-content: center;
   align-items: center;
   width: 100%;
-  font-family: JosefinSans_400Regular;
 `
 
 const ButtonWrapper = styled.View`
@@ -21,15 +21,15 @@ const ButtonWrapper = styled.View`
 `
 
 const Label = styled.Text`
-  font-family: JosefinSans_300Light;
-  font-size: 1.1rem;
+  font-family: 'JosefinSans_300Light';
+  font-size: 12px;
   margin-bottom: 10px;
   margin-top: 20px;
 `
 
 const Input = styled.TextInput`
-  font-family: JosefinSans_400Regular;
-  font-size: 1.2rem;
+  font-family: 'JosefinSans_400Regular';
+  font-size: 14px;
   text-align: center;
   width: 60px;
   height: 40px;
@@ -52,19 +52,25 @@ export default function BiodataScreen({ navigation }) {
       </QuestionWrapper>
       <ButtonWrapper>
         <Label>AGE</Label>
-        <Input keyboardType='numeric'></Input>
+        <Input></Input>
         <Label>HEIGHT</Label>
-        <Input keyboardType='numeric'></Input>
+        <Input></Input>
         <Label>WEIGHT</Label>
-        <Input keyboardType='numeric'></Input>
+        <Input></Input>
         <Label>GOAL WEIGHT</Label>
-        <Input
-          keyboardType='numeric'
-          onSubmitEditing={() => navigation.navigate('Register')}
-        ></Input>
+        <Input onSubmitEditing={() => navigation.navigate('Register')}></Input>
+        {/* <ThinButton
+          navigateTo='Register'
+          label='CONTINUE'
+          navigation={navigation}
+        /> */}
       </ButtonWrapper>
       <Text
-        style={{ flex: 1, fontFamily: 'JosefinSans_300Light', fontSize: 20 }}
+        style={{
+          flex: 1,
+          fontFamily: 'JosefinSans_300Light',
+          fontSize: 20
+        }}
         onPress={() => navigation.navigate('Who')}
       >
         BACK

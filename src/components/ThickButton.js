@@ -13,10 +13,10 @@ const ButtonWrapper = styled.TouchableOpacity`
 `
 
 const ButtonText = styled.Text`
-  font-size: 1.2rem;
+  font-size: 14px;
   position: relative;
   bottom: -2px;
-  font-family: JosefinSans_300Light;
+  font-family: 'JosefinSans_300Light';
 `
 
 export default function ThickButton(props) {

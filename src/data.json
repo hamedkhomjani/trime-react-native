@@ -2,5 +2,13 @@
   "colors": {
     "green": "#A7CDBD",
     "grey": "#F5F5F5"
-  }
+  },
+  "interests": [
+    { "name": "Vegan", "url": "../../assets/icons/Vegan.png" },
+    { "name": "Food", "url": "../../assets/icons/Food.png" },
+    { "name": "Sleep", "url": "../../assets/icons/Sleep.png" },
+    { "name": "Walks", "url": "../../assets/icons/Walks.png" },
+    { "name": "Yoga", "url": "../../assets/icons/Yoga.png" },
+    { "name": "Health", "url": "../../assets/icons/Health.png" }
+  ]
 }

@@ -10,7 +10,6 @@ const QuestionWrapper = styled.View`
   justify-content: center;
   align-items: center;
   width: 80%;
-  font-family: JosefinSans_400Regular;
 `
 
 const ButtonWrapper = styled.View`

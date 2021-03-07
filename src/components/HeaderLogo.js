@@ -4,11 +4,11 @@ import styled from 'styled-components/native'
 import Trime from '../SVGs/trime'
 
 const Wrapper = styled.View`
-  width: 80;
-  height: 30;
-  margin-top: 30px;
+  width: 80px;
+  height: 30px;
+  margin-top: 80px;
   margin-left: 25px;
-  align-self: start;
+  align-self: flex-start;
 `
 
 export default function HeaderLogo() {

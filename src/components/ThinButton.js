@@ -4,7 +4,7 @@ const data = require('../data.json')
 
 const ButtonWrapper = styled.TouchableOpacity`
   min-width: 50%;
-  width: ${props => (props.width ? props.width : null)};
+  width: ${props => (props.width ? props.width : '50%')};
   align-items: center;
   background: ${data.colors.grey};
   padding: 10px;
@@ -14,10 +14,10 @@ const ButtonWrapper = styled.TouchableOpacity`
 `
 
 const ButtonText = styled.Text`
-  font-size: 1.2rem;
+  font-size: 14px;
   position: relative;
   bottom: -2px;
-  font-family: JosefinSans_300Light;
+  font-family: 'JosefinSans_300Light';
 `
 
 export default function ThinButton(props) {

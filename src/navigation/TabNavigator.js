@@ -19,6 +19,7 @@ export default function TabNavigator() {
           activeTintColor: '#9684A1',
           inactiveTintColor: 'black',
           style: {
+            paddingBottom: 150,
             backgroundColor: '#A7CDBD',
             borderTopColor: 'black',
             borderTopWidth: StyleSheet.hairlineWidth,
