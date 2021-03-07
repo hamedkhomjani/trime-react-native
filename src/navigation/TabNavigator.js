@@ -33,7 +33,6 @@ export default function TabNavigator() {
             padding: 0,
             margin: 0,
             fontFamily: 'JosefinSans_300Light',
-            // justifyContent: 'center',
             fontSize: 16
           }
         }}

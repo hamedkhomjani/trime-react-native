@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import {
   useFonts,
   JosefinSans_300Light,
+  JosefinSans_700Bold,
   JosefinSans_400Regular,
   JosefinSans_100Thin
 } from '@expo-google-fonts/josefin-sans'
@@ -23,6 +24,7 @@ const Stack = createStackNavigator()
 function App() {
   let [fontsLoaded] = useFonts({
     JosefinSans_300Light,
+    JosefinSans_700Bold,
     JosefinSans_400Regular,
     JosefinSans_100Thin
   })
