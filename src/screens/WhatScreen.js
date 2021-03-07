@@ -1,16 +1,9 @@
 import React from 'react'
-import { View, Text, Button, Styles } from 'react-native'
+import { Text } from 'react-native'
 import styled from 'styled-components/native'
-const data = require('../data.json')
+import Container from '../components/Container'
 import ThickButton from '../components/ThickButton'
 import HeaderLogo from '../components/HeaderLogo'
-
-const Container = styled.View`
-  flex: 1;
-  background: ${data.colors.green};
-  justify-content: center;
-  align-items: center;
-`
 
 const QuestionWrapper = styled.View`
   flex: 5;

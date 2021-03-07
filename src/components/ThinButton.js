@@ -3,7 +3,8 @@ import styled from 'styled-components/native'
 const data = require('../data.json')
 
 const ButtonWrapper = styled.TouchableOpacity`
-  width: 50%;
+  min-width: 50%;
+  width: ${props => (props.width ? props.width : null)};
   align-items: center;
   background: ${data.colors.grey};
   padding: 10px;
@@ -21,7 +22,10 @@ const ButtonText = styled.Text`
 
 export default function ThinButton(props) {
   return (
-    <ButtonWrapper onPress={() => props.navigation.navigate(props.navigateTo)}>
+    <ButtonWrapper
+      width={props.width}
+      onPress={() => props.navigation.navigate(props.navigateTo)}
+    >
       <ButtonText>{props.label}</ButtonText>
     </ButtonWrapper>
   )

@@ -1,16 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/native'
-const data = require('../data.json')
 import Logo from '../SVGs/logo'
 import Trime from '../SVGs/trime'
 import ThinButton from '../components/ThinButton'
+import Container from '../components/Container'
 
-const Container = styled.View`
-  flex: 1;
-  background: ${data.colors.green};
-  justify-content: center;
-  align-items: center;
-`
 const TrimeWrapper = styled.View`
   margin: 15px;
   width: 200px;
