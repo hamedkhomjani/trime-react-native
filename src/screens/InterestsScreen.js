@@ -85,7 +85,7 @@ export default function InterestsScreen({ navigation }) {
         <ThinButton
           label={'CONTINUE'}
           navigation={navigation}
-          navigateTo={'Start'}
+          navigateTo={'Preferences'}
         ></ThinButton>
       </Wrapper>
       <Text
@@ -94,7 +94,7 @@ export default function InterestsScreen({ navigation }) {
           fontFamily: 'JosefinSans_300Light',
           fontSize: 20
         }}
-        onPress={() => navigation.navigate('Who')}
+        onPress={() => navigation.navigate('LearnMore')}
       >
         BACK
       </Text>
