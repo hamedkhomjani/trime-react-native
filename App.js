@@ -1,21 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import {
+  createAppContainer,
+  createStackNavigator
+} from '@react-navigation/native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import StartScreen from './src/screens/StartScreen'
+import BiodataScreen from './src/screens/BiodataScreen'
+import LearnMoreScreen from './src/screens/LearnMoreScreen'
+import RegisterScreen from './src/screens/RegisterScreen'
+import WhatScreen from './src/screens/WhatScreen'
+import WhoScreen from './src/screens/WhoScreen'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator = createStackNavigator(
+  {
+    Start: StartScreen,
+    Biodata: BiodataScreen,
+    LearnMore: LearnMoreScreen,
+    Register: RegisterScreen,
+    What: WhatScreen,
+    Who: WhoScreen
   },
-});
+  {
+    initialRouteName: 'Start',
+    defaultNavigationOptions: { title: 'Trime' }
+  }
+)
+
+export default createAppContainer(navigator)
