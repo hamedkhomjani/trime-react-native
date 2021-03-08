@@ -45,12 +45,12 @@ function App() {
           headerShown: false
         }}
       >
+        <Stack.Screen name='Preferences' component={PreferencesScreen} />
+        <Stack.Screen name='Start' component={StartScreen} />
         <Stack.Screen name='Goal' component={GoalScreen} />
         <Stack.Screen name='Workout' component={WorkoutScreen} />
         <Stack.Screen name='FitnessLevel' component={FitnessLevelScreen} />
         <Stack.Screen name='Interests' component={InterestsScreen} />
-        <Stack.Screen name='Start' component={StartScreen} />
-        <Stack.Screen name='Preferences' component={PreferencesScreen} />
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Who' component={WhoScreen} />
         <Stack.Screen name='What' component={WhatScreen} />

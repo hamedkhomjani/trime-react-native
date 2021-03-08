@@ -35,7 +35,7 @@ export default function LearnMoreScreen({ navigation }) {
       </QuestionWrapper>
       <ButtonWrapper>
         <ThinButton
-          navigateTo='LearnMore'
+          navigateTo='Goal'
           label='LETS GO!'
           navigation={navigation}
         ></ThinButton>

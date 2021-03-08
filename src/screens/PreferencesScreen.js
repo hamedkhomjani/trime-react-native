@@ -7,6 +7,7 @@ import HeaderLogo from '../components/HeaderLogo'
 import Skip from '../components/Skip'
 import ThinButton from '../components/ThinButton'
 import Avatar from '../SVGs/avatar'
+import OverlayButton from '../components/OverlayButton'
 const data = require('../data.json')
 
 const AvatarWrapper = styled.View`
@@ -19,31 +20,57 @@ const AvatarWrapper = styled.View`
 `
 
 const prefs = [
-  { label: 'Weight-loss', color: '#9684A1' },
-  { label: 'Cardio', color: '#FFCAB1' },
-  { label: 'Beginner', color: '#FFB6C1' },
-  { label: 'Vegan', color: '#64A485' },
-  { label: 'Gym', color: '#CFC7FF' },
-  { label: 'Tennis', color: '#F79375' },
-  { label: 'Running', color: '#5F84CB' }
+  {
+    label: 'Weight-loss',
+    color: '#9684A1',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Cardio',
+    color: '#FFCAB1',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Beginner',
+    color: '#FFB6C1',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Vegan',
+    color: '#64A485',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Gym',
+    color: '#CFC7FF',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Tennis',
+    color: '#F79375',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  },
+  {
+    label: 'Running',
+    color: '#5F84CB',
+    text:
+      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+  }
 ]
 
 export default function PreferencesScreen({ navigation }) {
   const renderItem = ({ item }) => (
-    <Text
-      style={{
-        backgroundColor: item.color,
-        width: '150px',
-        fontFamily: 'JosefinSans_300Light',
-        padding: '10px',
-        margin: '10px',
-        borderRadius: '5px',
-        textAlign: 'center',
-        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-      }}
-    >
-      {item.label}
-    </Text>
+    <OverlayButton
+      ModalComponent={Modal}
+      label={item.label}
+      color={item.color}
+    />
   )
 
   return (
