@@ -18,8 +18,11 @@ import RegisterScreen from './src/screens/RegisterScreen'
 import WhatScreen from './src/screens/WhatScreen'
 import WhoScreen from './src/screens/WhoScreen'
 import InterestsScreen from './src/screens/InterestsScreen'
+import GoalScreen from './src/screens/GoalScreen'
 import PreferencesScreen from './src/screens/PreferencesScreen'
 import TabNavigator from './src/navigation/TabNavigator'
+import WorkoutScreen from './src/screens/WorkoutScreen'
+import FitnessLevelScreen from './src/screens/FitnessLevelScreen'
 
 const Stack = createStackNavigator()
 
@@ -42,9 +45,12 @@ function App() {
           headerShown: false
         }}
       >
-        <Stack.Screen name='Preferences' component={PreferencesScreen} />
+        <Stack.Screen name='Goal' component={GoalScreen} />
+        <Stack.Screen name='Workout' component={WorkoutScreen} />
+        <Stack.Screen name='FitnessLevel' component={FitnessLevelScreen} />
         <Stack.Screen name='Interests' component={InterestsScreen} />
         <Stack.Screen name='Start' component={StartScreen} />
+        <Stack.Screen name='Preferences' component={PreferencesScreen} />
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Who' component={WhoScreen} />
         <Stack.Screen name='What' component={WhatScreen} />
