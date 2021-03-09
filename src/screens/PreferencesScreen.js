@@ -1,13 +1,18 @@
-import React from 'react'
-import { Text, FlatList } from 'react-native'
+import React, { useState } from 'react'
+import {
+  Text,
+  FlatList,
+  Pressable,
+  StyleSheet,
+  Modal,
+  View
+} from 'react-native'
 import styled from 'styled-components/native'
 import Container from '../components/Container'
-import IconButton from '../components/IconButton'
 import HeaderLogo from '../components/HeaderLogo'
 import Skip from '../components/Skip'
 import ThinButton from '../components/ThinButton'
 import Avatar from '../SVGs/avatar'
-import OverlayButton from '../components/OverlayButton'
 const data = require('../data.json')
 
 const AvatarWrapper = styled.View`
@@ -65,16 +70,53 @@ const prefs = [
 ]
 
 export default function PreferencesScreen({ navigation }) {
+  const [modalVisible, setModalVisible] = useState(false)
+  const [modalText, setModalText] = useState('')
+
   const renderItem = ({ item }) => (
-    <OverlayButton
-      ModalComponent={Modal}
-      label={item.label}
-      color={item.color}
-    />
+    <Pressable
+      onPress={() => {
+        setModalVisible(true)
+        setModalText(item.text)
+      }}
+    >
+      <Text
+        style={{
+          backgroundColor: item.color,
+          width: 150,
+          fontFamily: 'JosefinSans_300Light',
+          padding: 10,
+          margin: 10,
+          borderRadius: 5,
+          textAlign: 'center',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+        }}
+      >
+        {item.label}
+      </Text>
+    </Pressable>
   )
 
   return (
     <Container>
+      <Modal
+        animationType='fade'
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.')
+          setModalVisible(!modalVisible)
+        }}
+      >
+        <View style={styles.centeredView}>
+          <Pressable
+            style={[styles.button, styles.buttonClose]}
+            onPress={() => setModalVisible(!modalVisible)}
+          >
+            <Text style={styles.textStyle}>{modalText}</Text>
+          </Pressable>
+        </View>
+      </Modal>
       <HeaderLogo />
       <Skip navigation={navigation} />
       <Text
@@ -116,8 +158,52 @@ export default function PreferencesScreen({ navigation }) {
       <ThinButton
         label='CONTINUE'
         navigation={navigation}
-        navigateTo={'Preferences'}
+        navigateTo={'Match'}
       />
     </Container>
   )
 }
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: '#F194FF'
+  },
+  buttonClose: {
+    backgroundColor: '#2196F3'
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center'
+  }
+})

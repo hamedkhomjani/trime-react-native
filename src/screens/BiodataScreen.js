@@ -58,12 +58,12 @@ export default function BiodataScreen({ navigation }) {
         <Label>WEIGHT</Label>
         <Input></Input>
         <Label>GOAL WEIGHT</Label>
-        <Input onSubmitEditing={() => navigation.navigate('Register')}></Input>
-        {/* <ThinButton
+        <Input></Input>
+        <ThinButton
           navigateTo='Register'
           label='CONTINUE'
           navigation={navigation}
-        /> */}
+        />
       </ButtonWrapper>
       <Text
         style={{

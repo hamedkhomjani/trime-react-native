@@ -73,7 +73,7 @@ export default function FitnessLevelScreen({ navigation }) {
               textAlign: 'center'
             }}
           >
-            WHAT IS YOUR GOAL?
+            WHAT IS YOUR FITNESS LEVEL?
           </Text>
         </QuestionWrapper>
 

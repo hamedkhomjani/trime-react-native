@@ -74,7 +74,7 @@ export default function WorkoutScreen({ navigation }) {
               textAlign: 'center'
             }}
           >
-            WHAT IS YOUR GOAL?
+            HOW DO YOU NORMALLY WORK OUT?
           </Text>
         </QuestionWrapper>
 
@@ -103,11 +103,11 @@ export default function WorkoutScreen({ navigation }) {
             label='TEAM SPORTS'
             sublabel='Ball sports'
           ></SubtitleButton>
-          <ThickButton
+          <SubtitleButton
             navigation={navigation}
             navigateTo='FitnessLevel'
             label='OTHER'
-          ></ThickButton>
+          ></SubtitleButton>
         </ButtonWrapper>
       </Wrapper>
 

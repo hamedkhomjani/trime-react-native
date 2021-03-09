@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Overlay, View } from 'react-native-elements'
+import { Button, Overlay, View, Text } from 'react-native-elements'
 import styled from 'styled-components/native'
 
 const OverlayButton = props => {

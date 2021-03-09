@@ -11,6 +11,9 @@ import {
 } from '@expo-google-fonts/josefin-sans'
 const data = require('./src/data.json')
 
+import TrainersScreen from './src/screens/TrainersScreen'
+import PreferencesScreen from './src/screens/PreferencesScreen'
+import FitnessLevelScreen from './src/screens/FitnessLevelScreen'
 import BiodataScreen from './src/screens/BiodataScreen'
 import StartScreen from './src/screens/StartScreen'
 import LearnMoreScreen from './src/screens/LearnMoreScreen'
@@ -19,10 +22,9 @@ import WhatScreen from './src/screens/WhatScreen'
 import WhoScreen from './src/screens/WhoScreen'
 import InterestsScreen from './src/screens/InterestsScreen'
 import GoalScreen from './src/screens/GoalScreen'
-import PreferencesScreen from './src/screens/PreferencesScreen'
 import TabNavigator from './src/navigation/TabNavigator'
 import WorkoutScreen from './src/screens/WorkoutScreen'
-import FitnessLevelScreen from './src/screens/FitnessLevelScreen'
+import MatchScreen from './src/screens/MatchScreen'
 
 const Stack = createStackNavigator()
 
@@ -45,8 +47,11 @@ function App() {
           headerShown: false
         }}
       >
-        <Stack.Screen name='Preferences' component={PreferencesScreen} />
         <Stack.Screen name='Start' component={StartScreen} />
+        <Stack.Screen name='Preferences' component={PreferencesScreen} />
+        <Stack.Screen name='Trainers' component={TrainersScreen} />
+        <Stack.Screen name='Biodata' component={BiodataScreen} />
+        <Stack.Screen name='Match' component={MatchScreen} />
         <Stack.Screen name='Goal' component={GoalScreen} />
         <Stack.Screen name='Workout' component={WorkoutScreen} />
         <Stack.Screen name='FitnessLevel' component={FitnessLevelScreen} />
@@ -54,7 +59,6 @@ function App() {
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Who' component={WhoScreen} />
         <Stack.Screen name='What' component={WhatScreen} />
-        <Stack.Screen name='Biodata' component={BiodataScreen} />
         <Stack.Screen name='LearnMore' component={LearnMoreScreen} />
         <Stack.Screen name='TabNavigator' component={TabNavigator} />
       </Stack.Navigator>

@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 const data = require('../data.json')
 
 const ButtonWrapper = styled.TouchableOpacity`
-  width: 100%;
+  width: 300px;
   align-items: center;
   background: ${data.colors.grey};
   padding: 20px 10px;
