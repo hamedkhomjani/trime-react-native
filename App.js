@@ -47,8 +47,9 @@ function App() {
         }}
       >
         <Stack.Screen name='Start' component={StartScreen} />
-        <Stack.Screen name='Preferences' component={PreferencesScreen} />
+        <Stack.Screen name='LearnMore' component={LearnMoreScreen} />
         <Stack.Screen name='Trainers' component={TrainersScreen} />
+        <Stack.Screen name='Preferences' component={PreferencesScreen} />
         <Stack.Screen name='Biodata' component={BiodataScreen} />
         <Stack.Screen name='Match' component={MatchScreen} />
         <Stack.Screen name='Goal' component={GoalScreen} />
@@ -58,7 +59,6 @@ function App() {
         <Stack.Screen name='Register' component={RegisterScreen} />
         <Stack.Screen name='Who' component={WhoScreen} />
         <Stack.Screen name='What' component={WhatScreen} />
-        <Stack.Screen name='LearnMore' component={LearnMoreScreen} />
         <Stack.Screen name='TabNavigator' component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -3,6 +3,7 @@ import { Text } from 'react-native'
 import styled from 'styled-components/native'
 import Container from '../components/Container'
 import ThinButton from '../components/ThinButton'
+import ThinButtonGrey from '../components/ThinButtonGrey'
 import HeaderLogo from '../components/HeaderLogo'
 
 const QuestionWrapper = styled.View`
@@ -39,11 +40,11 @@ export default function LearnMoreScreen({ navigation }) {
           label='LETS GO!'
           navigation={navigation}
         ></ThinButton>
-        <ThinButton
+        <ThinButtonGrey
           navigateTo='TabNavigator'
           label="NO, I'M GOOD"
           navigation={navigation}
-        ></ThinButton>
+        ></ThinButtonGrey>
       </ButtonWrapper>
       <Text
         style={{ flex: 1, fontFamily: 'JosefinSans_300Light', fontSize: 20 }}

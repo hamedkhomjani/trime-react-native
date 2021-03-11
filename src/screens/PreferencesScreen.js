@@ -22,6 +22,36 @@ const AvatarWrapper = styled.View`
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
+`
+
+const CenteredView = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0;
+`
+const PrefButton = styled.View`
+  background: ${props => props.color};
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`
+const BottomWrapper = styled.View`
+  flex: 1;
+`
+
+const Overlay = styled.Pressable`
+  border-radius: 20px;
+  width: 80%;
+  padding: 10px;
+  elevation: 2;
+  background: ${props => props.color};
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const prefs = [
@@ -35,65 +65,65 @@ const prefs = [
     label: 'Cardio',
     color: '#FFCAB1',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'You prefer cardio training. Thats great! Did you know that listening to music while exercising can improve work out performance by 15%? Try listening to music next time you work out to improve your performance.'
   },
   {
     label: 'Beginner',
     color: '#FFB6C1',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'You are a workout beginner. Awesome making it here! The biggest thing when you first start working out is establishing the habit—getting used to being on your feet. '
   },
   {
     label: 'Vegan',
     color: '#64A485',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'Being a vegan reduces your risk of heart disease by lowering cholesterol levels. It also cuts your carbon footprint in half. Way to go!'
   },
   {
     label: 'Gym',
     color: '#CFC7FF',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'Did you know that the more muscle mass you have, the more fat your body burns while resting. So what are you waiting for? Go and get those muscles!'
   },
   {
     label: 'Tennis',
     color: '#F79375',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'Tennis is fun! Did you know that it has been calculated that an hour-long game of singles tennis burns around 600 calories for men and 420 calories for women.'
   },
   {
     label: 'Running',
     color: '#5F84CB',
     text:
-      'You want to lose weight, way to go! Did you know that losing weight alters brain activity? For example, after following a weight loss program for 6 months, women scored better on memory tests. '
+      'Running is great way of working out. Dont forget that a good warmup makes it much easier to get going and keep going. '
   }
 ]
 
 export default function PreferencesScreen({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false)
   const [modalText, setModalText] = useState('')
+  const [modalColor, setModalColor] = useState('')
+  const [currentPref, setCurrentPref] = useState('')
 
   const renderItem = ({ item }) => (
     <Pressable
       onPress={() => {
         setModalVisible(true)
         setModalText(item.text)
+        setModalColor(item.color)
+        setCurrentPref(item.label)
       }}
     >
-      <Text
-        style={{
-          backgroundColor: item.color,
-          width: 150,
-          fontFamily: 'JosefinSans_300Light',
-          padding: 10,
-          margin: 10,
-          borderRadius: 5,
-          textAlign: 'center',
-          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-        }}
-      >
-        {item.label}
-      </Text>
+      <PrefButton color={item.color}>
+        <Text
+          style={{
+            fontFamily: 'JosefinSans_300Light',
+            textAlign: 'center'
+          }}
+        >
+          {item.label}
+        </Text>
+      </PrefButton>
     </Pressable>
   )
 
@@ -108,14 +138,17 @@ export default function PreferencesScreen({ navigation }) {
           setModalVisible(!modalVisible)
         }}
       >
-        <View style={styles.centeredView}>
-          <Pressable
-            style={[styles.button, styles.buttonClose]}
+        <CenteredView>
+          <Overlay
+            color={modalColor}
             onPress={() => setModalVisible(!modalVisible)}
           >
+            <Text style={styles.textStyleTitle}>
+              {currentPref.toUpperCase()}
+            </Text>
             <Text style={styles.textStyle}>{modalText}</Text>
-          </Pressable>
-        </View>
+          </Overlay>
+        </CenteredView>
       </Modal>
       <HeaderLogo />
       <Skip navigation={navigation} />
@@ -155,11 +188,13 @@ export default function PreferencesScreen({ navigation }) {
         numColumns={2}
         keyExtractor={item => item.label}
       />
-      <ThinButton
-        label='CONTINUE'
-        navigation={navigation}
-        navigateTo={'Match'}
-      />
+      <BottomWrapper>
+        <ThinButton
+          label='CONTINUE'
+          navigation={navigation}
+          navigateTo={'Match'}
+        />
+      </BottomWrapper>
     </Container>
   )
 }
@@ -198,9 +233,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196F3'
   },
   textStyle: {
-    color: 'white',
+    color: 'black',
+    padding: 10,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'JosefinSans_300Light'
+  },
+  textStyleTitle: {
+    color: 'black',
+    padding: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontFamily: 'JosefinSans_400Regular'
   },
   modalText: {
     marginBottom: 15,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TextInput } from 'react-native'
+import { Text, TextInput, Keyboard } from 'react-native'
 import styled from 'styled-components/native'
 import Container from '../components/Container'
 import HeaderLogo from '../components/HeaderLogo'
@@ -52,13 +52,34 @@ export default function BiodataScreen({ navigation }) {
       </QuestionWrapper>
       <ButtonWrapper>
         <Label>AGE</Label>
-        <Input></Input>
+        <Input
+          returnKeyLabel='Done'
+          keyboardType='numeric'
+          returnKeyType='done'
+          onSubmitEditing={Keyboard.dismiss}
+        ></Input>
         <Label>HEIGHT</Label>
-        <Input></Input>
+        <Input
+          returnKeyLabel='Done'
+          keyboardType='numeric'
+          returnKeyType='done'
+          onSubmitEditing={Keyboard.dismiss}
+        ></Input>
         <Label>WEIGHT</Label>
-        <Input></Input>
+        <Input
+          returnKeyLabel='Done'
+          keyboardType='numeric'
+          returnKeyType='done'
+          onSubmitEditing={Keyboard.dismiss}
+        ></Input>
         <Label>GOAL WEIGHT</Label>
-        <Input></Input>
+        <Input
+          returnKeyLabel='Done'
+          keyboardType='numeric'
+          returnKeyType='done'
+          onSubmitEditing={Keyboard.dismiss}
+        ></Input>
+        <Label></Label>
         <ThinButton
           navigateTo='Register'
           label='CONTINUE'

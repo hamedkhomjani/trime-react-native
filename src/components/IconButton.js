@@ -36,7 +36,7 @@ export default function IconButton(props) {
 
   return (
     <Interest>
-      <ButtonWrapper activeOpacity={1} onPress={select} selected={selected}>
+      <ButtonWrapper onPress={select} activeOpacity={1} selected={selected}>
         <Image
           source={props.url}
           style={{ width: 35, height: 40, top: 0, resizeMode: 'center' }}

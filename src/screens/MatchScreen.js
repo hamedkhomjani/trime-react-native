@@ -14,7 +14,8 @@ const QuestionWrapper = styled.View`
   flex: 5;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 70%;
+  margin-bottom: 20px;
 `
 
 const ButtonWrapper = styled.View`
@@ -40,17 +41,17 @@ export default function MatchScreen({ navigation }) {
         <QuestionWrapper>
           <Text
             style={{
-              fontFamily: 'JosefinSans_400Regular',
+              fontFamily: 'JosefinSans_300Light',
               fontSize: 20,
               textAlign: 'center'
             }}
           >
-            MATCHING YOU WITH PERSONAL TRAINERS
+            MATCHING YOU WITH PERSONAL TRAINERS...
           </Text>
           <Image
-            style={{ width: 300, height: 200 }}
+            style={{ width: 144, height: 250, left: -10, margin: 30 }}
             source={{
-              uri: 'https://media.giphy.com/media/fZPCco86dJ7H9Ai25R/giphy.gif'
+              uri: 'https://media.giphy.com/media/eGjb2OoMklytSiwfKQ/giphy.gif'
             }}
           />
         </QuestionWrapper>

@@ -7,10 +7,12 @@ import HeaderLogo from '../components/HeaderLogo'
 import Skip from '../components/Skip'
 import ThinButton from '../components/ThinButton'
 
+const keyGen = () => '_' + Math.random().toString(36).substr(2, 9)
+
 const Wrapper = styled.View`
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `
 
 const QuestionWrapper = styled.View`
@@ -21,9 +23,9 @@ const QuestionWrapper = styled.View`
 `
 
 const ButtonWrapper = styled.FlatList`
-  flex: 7;
+  height: 400px;
   width: 100%;
-  top: -60px;
+  top: -25px;
 `
 
 const data = [
@@ -46,7 +48,7 @@ const data = [
 
 export default function InterestsScreen({ navigation }) {
   const renderItem = ({ item }) => (
-    <IconButton name={item.name} url={item.url} />
+    <IconButton name={item.name} url={item.url} key={keyGen()} />
   )
 
   return (
@@ -80,7 +82,7 @@ export default function InterestsScreen({ navigation }) {
           data={data}
           renderItem={renderItem}
           numColumns={3}
-          keyExtractor={item => item + 'icon'}
+          keyExtractor={() => keyGen()}
         ></ButtonWrapper>
         <ThinButton
           label={'CONTINUE'}
@@ -91,6 +93,7 @@ export default function InterestsScreen({ navigation }) {
       <Text
         style={{
           flex: 0.1,
+          marginTop: 20,
           fontFamily: 'JosefinSans_300Light',
           fontSize: 20
         }}

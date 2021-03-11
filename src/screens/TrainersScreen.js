@@ -1,79 +1,126 @@
 import React, { useState } from 'react'
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from 'react-native'
+import { StyleSheet, FlatList, Text, Pressable, View } from 'react-native'
+import styled from 'styled-components'
+import Container from '../components/Container'
+import HeaderLogo from '../components/HeaderLogo'
+import Skip from '../components/Skip'
+import TrainerCard from '../components/TrainerCard'
+const keyGen = () => '_' + Math.random().toString(36).substr(2, 9)
 
-const TrainersScreen = () => {
-  const [modalVisible, setModalVisible] = useState(false)
+const data = [
+  {
+    name: 'Maria Henriksson',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tags: ['Cardio', 'Running', 'Weight-loss'],
+    rating: 4.7,
+    image: require('../../assets/maria.jpg')
+  },
+  {
+    name: 'Larry Peterson',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tags: ['Cardio', 'Beginner', 'Weight-loss'],
+    rating: 4.2,
+    image: require('../../assets/larry.jpg')
+  },
+  {
+    name: 'Moa Falk',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tags: ['Beginner', 'Weight-loss'],
+    rating: 3.9,
+    image: require('../../assets/moa.jpg')
+  },
+  ,
+  {
+    name: 'Hakim Ahmed',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tags: ['Gym', 'Beginner'],
+    rating: 4.7,
+    image: require('../../assets/hakim.jpg')
+  },
+  ,
+  {
+    name: 'Erik Adamsson',
+    text:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    tags: ['Gym'],
+    rating: 3.8,
+    image: require('../../assets/erik.jpg')
+  }
+]
+const Wrapper = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`
+
+const QuestionWrapper = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+`
+
+const ButtonWrapper = styled.ScrollView`
+  flex: 7;
+  width: 100%;
+  margin-bottom: 20px;
+`
+
+const TrainersScreen = ({ navigation }) => {
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.')
-          setModalVisible(!modalVisible)
+    <Container>
+      <HeaderLogo />
+      <Skip navigation={navigation} />
+      <Text
+        style={{
+          fontFamily: 'JosefinSans_300Light',
+          fontSize: 15,
+          marginTop: 20
         }}
       >
-        <View style={styles.centeredView}>
-          <Pressable
-            style={[styles.button, styles.buttonClose]}
-            onPress={() => setModalVisible(!modalVisible)}
+        6 / 6
+      </Text>
+      <Wrapper>
+        <QuestionWrapper>
+          <Text
+            style={{
+              fontFamily: 'JosefinSans_300Light',
+              fontSize: 20,
+              textAlign: 'center'
+            }}
           >
-            <Text style={styles.textStyle}>Hide Modal</Text>
-          </Pressable>
-        </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+            THESE COULD BE YOUR FITNESS MATCH
+          </Text>
+        </QuestionWrapper>
+
+        <ButtonWrapper
+          contentContainerStyle={{ alignItems: 'center' }}
+          keyExtractor={item => item + 'icon'}
+        >
+          {data.map(trainer => (
+            <TrainerCard
+              keyExtractor={() => keyGen}
+              trainer={trainer}
+            ></TrainerCard>
+          ))}
+        </ButtonWrapper>
+      </Wrapper>
+      <Text
+        style={{
+          flex: 0.1,
+          fontFamily: 'JosefinSans_300Light',
+          fontSize: 20
+        }}
+        onPress={() => navigation.navigate('Preferences')}
       >
-        <Text style={styles.textStyle}>YOOO</Text>
-      </Pressable>
-    </View>
+        BACK
+      </Text>
+    </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF'
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3'
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center'
-  }
-})
 
 export default TrainersScreen
