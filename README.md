@@ -15,10 +15,10 @@ Since the onboarding part of the app was one of the focuses of the UX team, we d
 
 **Screenshots:**
 
-![Start Page](assets/screenshots/1.png)
-![Start Page](assets/screenshots/2.png)
-![Start Page](assets/screenshots/3.png)
-![Start Page](assets/screenshots/4.png)
+![Start Page](./assets/screenshots/1.png)
+![Start Page](./assets/screenshots/2.png)
+![Start Page](./assets/screenshots/3.png)
+![Start Page](./assets/screenshots/4.png)
 
 **How to run on your mobile device:**
 
