@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, Image } from 'react-native'
 import styled from 'styled-components/native'
-const data = require('../data.json')
+const data = require('../data')
 
 const Card = styled.View`
   width: 350px;
@@ -33,7 +33,7 @@ const TrainerInfo = styled.View`
 const Rating = styled.View`
   width: 50px;
   height: 50px;
-  border: 5px solid #a7cdbd;
+  border: 5px solid ${data.colors.green};
   border-radius: 25px;
   align-items: center;
   justify-content: center;
@@ -44,19 +44,19 @@ const Tags = styled.View`
   flex-wrap: wrap;
 `
 const Tag = styled.View`
-  background: #c4c4c4;
+  background: ${data.colors.darkGrey};
   border-radius: 6px;
   padding: 4px;
   margin: 5px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px ${data.colors.shadow};
 `
 
-export default function TrainerCard(props) {
+export default function TrainerCard({ trainer }) {
   return (
     <Card>
       <AvatarWrapper>
         <Image
-          source={props.trainer.image}
+          source={trainer.image}
           style={{ width: 80, height: 80, borderRadius: 20 }}
         ></Image>
       </AvatarWrapper>
@@ -66,22 +66,22 @@ export default function TrainerCard(props) {
             <Text
               style={{ fontFamily: 'JosefinSans_400Regular', fontSize: 10 }}
             >
-              {props.trainer.name}
+              {trainer.name}
             </Text>
             <Text style={{ fontFamily: 'JosefinSans_300Light', fontSize: 10 }}>
-              {props.trainer.text}
+              {trainer.text}
             </Text>
           </View>
           <Rating>
             <Text
               style={{ fontFamily: 'JosefinSans_400Regular', fontSize: 10 }}
             >
-              {props.trainer.rating}
+              {trainer.rating}
             </Text>
           </Rating>
         </TrainerInfo>
         <Tags>
-          {props.trainer.tags.map(tag => (
+          {trainer.tags.map(tag => (
             <Tag>
               <Text
                 style={{ fontFamily: 'JosefinSans_300Light', fontSize: 10 }}

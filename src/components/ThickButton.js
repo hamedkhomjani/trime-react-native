@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
-const data = require('../data.json')
+const data = require('../data')
 
 const ButtonWrapper = styled.TouchableOpacity`
   width: 50%;

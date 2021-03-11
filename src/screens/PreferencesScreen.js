@@ -13,7 +13,7 @@ import HeaderLogo from '../components/HeaderLogo'
 import Skip from '../components/Skip'
 import ThinButton from '../components/ThinButton'
 import Avatar from '../SVGs/avatar'
-const data = require('../data.json')
+const data = require('../data')
 
 const AvatarWrapper = styled.View`
   width: 100px;
@@ -39,7 +39,7 @@ const PrefButton = styled.View`
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px ${data.colors.shadow};
 `
 const BottomWrapper = styled.View`
   flex: 1;
@@ -51,7 +51,7 @@ const Overlay = styled.Pressable`
   padding: 10px;
   elevation: 2;
   background: ${props => props.color};
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px ${data.colors.shadow};
 `
 
 const prefs = [

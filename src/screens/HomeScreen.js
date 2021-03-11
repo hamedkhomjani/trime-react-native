@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, ScrollView, Text, View, TextInput } from 'react-native'
 import styled from 'styled-components/native'
-const data = require('../data.json')
+const data = require('../data')
 
 import Icon from '../components/Icon'
 import TrimeBold from '../SVGs/trimeBold'

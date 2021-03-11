@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Image } from 'react-native'
 import styled from 'styled-components/native'
-const data = require('../data.json')
+const data = require('../data')
 
 const Interest = styled.View`
   margin: 10px;
