@@ -63,5 +63,6 @@ Need to explore asyncStorage for storing user prefs and to not load the onboardi
 
 - [Neha Hirve](https://github.com/nehahirve/)
 - [Saeid Fattahi](https://github.com/saeidfattahi/)
+- [Hamed Khomjani](https://github.com/hamedkhomjani)
 - Dimitri Karlov
 - Alice Jurell
